@@ -1,0 +1,7 @@
+<!-- notes_list.html -->
+<ul>
+    {% for file in files %}
+        <li><a href="{{ url_for('view_quiz', filename=file) }}">{{ file }}</a></li>
+    {% endfor %}
+    </ul>
+    

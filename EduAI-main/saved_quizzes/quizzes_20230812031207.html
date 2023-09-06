@@ -1,0 +1,18 @@
+
+1. What is the purpose of this document?
+Answer: The purpose of this document is to provide a proof of non-recursive enumerability of languages from automata theory. It discusses how to prove that a language L is not recursively enumerable by reducing it from the language ATM, which is not recursively enumerable. It also proves that if L is less than or equal to ATM, then L is recursively enumerable, and if L is recursively enumerable, then L is less than or equal to ATM.
+
+2. What is the input for Lp defined as?
+Answer: The input for Lp is defined as ⟨M′⟩, using the input ⟨M⟩, w for ATM.
+
+3. What is the purpose of the Universal Turing Machine (UTM)?
+Answer: The purpose of the Universal Turing Machine (UTM) is to determine whether a given string is accepted or rejected by a Turing machine. It does this by running the Turing machine on the given string and then determining whether the Turing machine accepts or rejects the string.
+
+4. What is the definition of M′(k)?
+Answer: The definition of M′(k) is as follows: For input string k, i. Run the universal turing machine UTMon⟨M⟩,w. ii. If UTMaccepts, then reject k iii. If not, run UTMon⟨M0⟩, s iv. If UTMaccepts ⟨M0⟩, s, accept k v. If not, reject k.
+
+5. What is the proof of the validity of the reduction?
+Answer: The proof of the validity of the reduction is as follows: →If⟨M⟩, w∈ATM, then ⟨M′⟩ ∈Lp. Since⟨M⟩, w∈ATM,Mrejects w. This means that UTMrejects ⟨M⟩,w. This means that we go to lines 3-5. Note that for every x, that M0accepts, M′will also accept as UTM will accept ⟨M0⟩, xby definition. Likewise, for every z, that M0doesn’t accept, M′will not accept either as UTM will not accept ⟨M0⟩, zby definition. As such, the langauge of L(M0) and L(M′) are identical and since L(M0)∈P, then L(M′)∈P, meaning that ⟨M′⟩ ∈P. ←If⟨M′⟩ ∈Lp, then ⟨M⟩, w∈ATM. Suppose for the sake of contradiction that ⟨M⟩, w /∈ATM. As such, Maccepts w, meaning UTM will also accept ⟨M⟩, w, meaning our M′will always be in line 2 and reject every string. Thus, L(M′) is the empty set, which is a finite subset of L(M0). As such, L(M′) does not have the property P, meaning, ⟨M′⟩/∈Lp, which is a contradiction. We have proved that ⟨M⟩, w∈ATMiff⟨M′⟩ ∈Lpthrough our valid reduction. As ATMis not recursively enumerable, this means that Lpis not either.
+
+6. What is the conclusion of the proof?
+Answer: The conclusion of the proof is that if ⟨M⟩, w∈ATM, then ⟨M′⟩ ∈Lp, and if ⟨M′⟩ ∈Lp, then ⟨M⟩, w∈ATM. As ATMis not recursively enumerable, this means that Lpis not either.

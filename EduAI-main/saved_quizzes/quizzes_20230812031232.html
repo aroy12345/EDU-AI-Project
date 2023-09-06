@@ -1,0 +1,15 @@
+
+1. What is the purpose of this document?
+Answer: The purpose of this document is to provide a proof of non-recursively enumerability of languages from automata theory. It discusses the concept of reduction in the context of language acceptance, and proves that if L is less than or equal to ATM, then L is recursively enumerable, and if L is recursively enumerable, then L is less than or equal to ATM. It also proves that if Lp is reduced from the language ATM, then Lp is not recursively enumerable.
+
+2. What is the input for Lp?
+Answer: The input for Lp is defined as ⟨M′⟩, using the input ⟨M⟩, w for ATM.
+
+3. What is the definition of M′(k)?
+Answer: The definition of M′(k) is as follows: For input string k, run the universal turing machine UTM on ⟨M⟩, w. If UTM accepts, then reject k. If not, run UTM on ⟨M0⟩, s. If UTM accepts ⟨M0⟩, s, accept k. If not, reject k.
+
+4. What is the proof of the validity of the reduction?
+Answer: The proof of the validity of the reduction is as follows: If ⟨M⟩, w∈ATM, then ⟨M′⟩ ∈Lp. Since ⟨M⟩, w∈ATM, M rejects w. This means that UTM rejects ⟨M⟩, w. This means that we go to lines 3-5. Note that for every x, that M0 accepts, M′ will also accept as UTM will accept ⟨M0⟩, x by definition. Likewise, for every z, that M0 doesn’t accept, M′ will not accept either as UTM will not accept ⟨M0⟩, z by definition. As such, the language of L(M0) and L(M′) are identical and since L(M0)∈P, then L(M′)∈P, meaning that ⟨M′⟩ ∈P. If ⟨M′⟩ ∈Lp, then ⟨M⟩, w∈ATM. Suppose for the sake of contradiction that ⟨M⟩, w /∈ATM. As such, M accepts w, meaning UTM will also accept ⟨M⟩, w, meaning our M′ will always be in line 2 and reject every string. Thus, L(M′) is the empty set, which is a finite subset of L(M0). As such, L(M′) does not have the property P, meaning, ⟨M′⟩/∈Lp, which is a contradiction. We have proved that ⟨M⟩, w∈ATM iff ⟨M′⟩ ∈Lp through our valid reduction. As ATM is not recursively enumerable, this means that Lp is not either.
+
+5. What is the conclusion of the proof?
+Answer: The conclusion of the proof is that if Lp is reduced from the language ATM, then Lp is not recursively enumerable.

@@ -1,0 +1,30 @@
+
+<h1>Proof of Non-Recursive Enumerability of Languages from Automata Theory</h1>
+
+<h2>Page 1</h2>
+
+<p>This section explains how to prove that the language Lis not recursively enumerable by reducing it from the language ATM. It defines the input for Lis⟨M′⟩, x, y such that x=w,y=s, where s̸=wandsis an input for ⟨M⟩. It then defines M′(k) and proves the validity of the reduction. Finally, it concludes that if ⟨M′⟩, x, y∈L, then ⟨M⟩, w∈ATM.</p>
+
+<p>Let us prove the validity of this reduction:</p>
+
+<ul>
+  <li><strong>If⟨M⟩, w∈ATM, then ⟨M′⟩, x, y∈L.</strong> First of M′will always accept yas by line 1 y̸=w. Let us show that it will not accept x. By definition, since ⟨M⟩, w∈ATM,Mwill not accept wand also xasx=w. When we feed xinM′, we will go to line 2 as x=w. From there, by defitnton of UTM, the UTM will reject MandxasMdoes not accept x. Therefore, we will go to line 4, and reject x. Hence M′will always reject xbut accept y, meaning only one of xoryis accepted, meaning ⟨M′⟩, x, y∈L.</li>
+  <li><strong>If⟨M′⟩, x, y∈L, then ⟨M⟩, w∈ATM</strong> This means that M′accepted only xor only y.y=sandx=w. Only of those will be accepted. Since y̸=w, we see thatywill always be accepted by M′. This means x=wwill always be rejected. Our only rejection is line 4. We reach line 4 through line two where we run the UTM on ⟨M⟩and our input string, in this case x. For our to reach line 4, our UTM much have rejected ⟨M⟩, w=x. By definition, this means thats Mdoes not accept w=x. By definition of ATM, this means that ⟨M⟩, w∈ATM</li>
+</ul>
+
+<p>We have proved that ⟨M′⟩, x, y∈L, iff⟨M⟩, w∈ATMthrough our vald reduction. As ATMis not recursively enumerable, this means that Lis not either.</p>
+
+<h2>Page 2</h2>
+
+<p>Q2:Q2:Q2: Prove that L≤ATMif and only if L is recursively enumer- able.</p>
+
+<ul>
+  <li><strong>IfL≤ATM, then L is recursively enumerable.</strong> From lecture notes, we know that if Li≤LjandLjis recursively enumerable, then Liis also recursively enumerable. From lecture notes, we know that ATMis recursively enumerable; since L≤ATM, this means that L is recursively enumerable using the lecture statement we showed earlier.</li>
+  <li><strong>If L is recursively enumerable, then L≤ATM.</strong> We know that Lis recursively enumerable so there must ex- ists a Turing machine Msuch that L(M) = L. Let us define the following reduction from LtoATM. For an input w of the Turing Machine MforL, letN=Mandy=w, where ⟨N⟩,yis the input for ATM. Let us show that this is a valid reduction below and L≤ATM.</li>
+</ul>
+
+<p>SUB PROOF: w∈L(Maccepts w) iff⟨N⟩,y∈ATM SUB PROOF: w∈L(Maccepts w) iff⟨N⟩,y∈ATM SUB PROOF: w∈L(Maccepts w) iff⟨N⟩,y∈ATM</p>
+
+<ul>
+  <li><strong>Ifw∈L(Maccepts w), then ⟨N⟩,y∈ATM</strong>N=Mandy=w. Since, Maccepts wthis also means that Naccepts y. Hence, ⟨N⟩,y∈ATM.</li>
+  <li><strong>If⟨N⟩,y∈ATM, then w∈L(Maccepts w).</strong> Since ⟨N⟩,y∈ATM, this means that Naccepts y, Since N=Mand y=w, this also means Maccepts wand so w∈L.</

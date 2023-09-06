@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link href="{{ url_for('static', filename='css/tailwind.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+    <div class="container mx-auto px-4">
+        <div class="py-8 text-center">
+            <h1 class="text-4xl font-bold mb-4">Generated Flashcards</h1>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6">
+            {% if flashcards %}
+                <div class="text-xl">
+                    {{ flashcards }}
+                </div>
+            {% else %}
+                <p>No flashcards generated.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
