@@ -6,7 +6,7 @@ import os
 
 
 # Insert OpenAPI Key here when you make account
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = ''
 
 def construct_index(directory_path):
     max_input_size = 4096
